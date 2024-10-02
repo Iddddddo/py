@@ -26,7 +26,7 @@ def diag(f, x, y):
     print()
     return f        
 
-f=[['1']*n]*n
+f = [['1'] * n for _ in range(n)]
 vers=[]
 for x in range(n):
     y=0
