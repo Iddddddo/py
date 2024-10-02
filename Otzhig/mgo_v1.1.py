@@ -21,9 +21,6 @@ def diag(f, x, y):
         f[x4][y4]='0'
         x4-=1
         y4-=1
-    for i in f:
-        print(i)
-    print()
     return f        
 
 f = [['1'] * n for _ in range(n)]
@@ -41,3 +38,7 @@ for x in range(n):
         f[(x+j)%n][y]='0' #вертикаль
     f=diag(f,x,y) #диагонали
     f[x][y]='1'
+
+for i in f:
+    print(i)
+print()
