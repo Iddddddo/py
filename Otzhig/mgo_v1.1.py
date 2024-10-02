@@ -24,21 +24,22 @@ def diag(f, x, y):
     return f        
 
 f = [['1'] * n for _ in range(n)]
-vers=[]
 for x in range(n):
     y=0
     for i in range(n):
-        if (f[x][i]=='1') and ((i in vers)==0):
+        if (f[x][i]=='1'):
             y=i
             break
-    vers.append(y)
     f[x]=['0']*n #горизонталь
     
     for j in range(n):
         f[(x+j)%n][y]='0' #вертикаль
     f=diag(f,x,y) #диагонали
     f[x][y]='1'
-
-for i in f:
-    print(i)
-print()
+a=[]
+for y in range(n):
+    for x in range(n):
+        if f[x][y]=='1':
+            a.append(n-x)
+a=str(a).replace(',','')
+print(a[1:-1])
